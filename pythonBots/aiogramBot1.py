@@ -55,8 +55,8 @@ async def funkciya_zabanit(message:types.Message):
     if not message.reply_to_message:
         await message.reply('пиши комманду ban в ответ на сообшение')
         return
-    await message.delete_message(chat_id=GROUP_ID, message_id=message.message_id)
-    await message.bot.ban_chat_member(chat_id=GROUP_ID, user_id=message.reply_tomessage.from_user.id)
+    await message.bot.delete_message(chat_id=GROUP_ID, message_id=message.message_id)
+    await message.bot.ban_chat_member(chat_id=GROUP_ID, user_id=message.reply_to_message.from_user.id)
 # ping pong 
 @dp.message()
 async def echo(message: types.Message):
